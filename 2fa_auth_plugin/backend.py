@@ -41,6 +41,8 @@ class TwoFactorAuthBackend(backend.KeystoneBackend):
     def authenticate(self, request=None, username=None, password=None, user_domain_name=None, project_domain_name=None, auth_url=None):
         # try authentication with otp....
         try:
+            print("This should return error")
+            print(3/0)
             # last six digits is the OTP token
             otp = password[-6::]
             # authenticate with user/pass, with pass being the password from the login page
